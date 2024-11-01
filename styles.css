@@ -1,0 +1,169 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  color: #333;
+  text-align: center;
+}
+
+/* General header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(40, 40, 75); /* Light gray background */
+}
+
+/* Left-side icons styling */
+.header-left {
+  display: flex;
+  gap: 10px; /* Space between icons */
+  padding-left: 20px; /* Adds left padding */
+}
+
+.header-left img {
+  width: 30px; /* Adjust size for smaller icons */
+  height: 30px;
+}
+
+/* Right-side contact information */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between contact info and button */
+}
+
+.contact-info {
+  display: flex; /* Puts phone numbers in a row */
+  gap: 30px; /* Adjust gap between the phone numbers */
+}
+
+.contact-info p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between phone icon and number */
+  color: white;
+}
+
+.contact-info img {
+  width: 20px; /* Adjust size of phone icons */
+  height: 20px;
+  border-radius: 3px;
+}
+
+/* Button styling */
+.button {
+  padding: 10px 20px;
+  background-color: #68b045; /* Button background color */
+  color: white; /* Button text color */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .header {
+      flex-direction: column; /* Stack items vertically */
+      align-items: flex-start; /* Align items to the start */
+      padding: 10px;
+  }
+
+  .header-left {
+      justify-content: center;
+      width: 100%; /* Full width for social media icons */
+      padding-left: 0;
+      gap: 5px; /* Reduce gap between icons for mobile */
+  }
+
+  .header-right {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px; /* Reduce gap between contact info and button */
+      width: 100%; /* Full width for the contact info */
+  }
+
+  .contact-info {
+      flex-direction: column;
+      gap: 10px; /* Stack phone numbers vertically */
+  }
+
+  .contact-info p {
+      font-size: 14px; /* Smaller font for phone numbers */
+  }
+
+  .button {
+      padding: 10px 16px; /* Smaller button size */
+      font-size: 14px; /* Smaller button text */
+      width: 50%; /* Full width button */
+      text-align: center;
+      margin-left: 60px;
+  }
+
+  /* Adjust icon sizes for mobile */
+  .header-left img, .contact-info img {
+      width: 25px;
+      height: 25px;
+  }
+}
+
+
+
+/* Navbar */
+.navbar {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; /* Adjust padding to reduce the navbar height */
+  position: relative; /* Important for positioning the menu toggle */
+  z-index: 10; /* Ensure navbar stays above other content */
+}
+
+.logo img {
+  height: 100px; /* Adjust logo size */
+  margin-right: 100px; /* Space between logo and navigation items */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 200px;
+  margin: 0;
+  flex-grow: 1; /* Ensures the nav takes up the remaining space */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+nav ul li {
+  margin: 0 20px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding-bottom: 5px; /* For positioning the hover underline */
+  display: inline-block; /* To apply the underline properly */
+  position: relative;
+}
+
+.menu-toggle {
+  display: none; /* Initially hidden on larger screens */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #333; /* Adjust color as needed */
+  margin: 4px 0;
+}
+

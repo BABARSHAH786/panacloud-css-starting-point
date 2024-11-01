@@ -1,0 +1,1141 @@
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .menu-toggle {
+      display: flex; /* Show hamburger icon on mobile */
+  }
+  nav {
+    display: none; /* Hide nav links by default on mobile */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;
+    top: 100%; /* Adjust position based on your design */
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: white; /* Background color */
+    z-index: 10; /* Ensures it is on top */
+  }
+  nav.active {
+    display: flex; /* Show nav links when active */
+  }
+    .navbar {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align items to the left */
+    }
+  
+    .logo img {
+      height: 50px; /* Reduce the size of the logo on mobile */
+    }
+  
+    nav ul {
+      display: none; /* Hide navigation items initially */
+      flex-direction: column; /* Stack navigation items */
+      padding-left: 0; /* Remove padding for mobile */
+      width: 100%; /* Full width */
+      position: absolute; /* Position the menu */
+      top: 60px; /* Adjust according to your navbar height */
+      left: 0; /* Align to the left */
+      background-color: white; /* Background color */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
+      z-index: 10; /* Ensure the dropdown is above other elements */
+    }
+  
+    nav.active ul {
+      display: flex; /* Show navigation items when active */
+    }
+  
+    .menu-toggle {
+      cursor: pointer; /* Pointer cursor on hover */
+      margin-left: auto; /* Align toggle to the right */
+    }
+  
+    nav ul li a:hover::after {
+      height: 2px; /* Reduce thickness for mobile screens */
+      background-color: #FFA500; /* Maintain color */
+      width: 35%;
+  }
+  
+  nav ul li {
+      padding: 10px 0; /* Add padding to list items for better touch targets */
+  }
+  }
+  
+  /* Hover effect for the underline */
+  nav ul li a:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px; /* Adjust thickness of the underline */
+    background-color: #FFA500; /* Mustard-orange color */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  /* Banner */
+  /* Main Banner Section */
+  .banner {
+    background-size: cover;           /* Ensures the image covers the entire section */
+    background-position: center;      /* Centers the image */
+    background-repeat: no-repeat;     /* Prevents repeating the image */
+    height: 100vh;                     /* Sets the height of the banner section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;                     /* Text color to contrast with the background image */
+    position: relative;
+    transition: background-image 1s ease-in-out; /* Smooth transition between images */
+    padding: 20px;                   /* Add padding to prevent overflow */
+    box-sizing: border-box;          /* Include padding in height calculation */
+  }
+  
+  .banner h1 {
+    font-size: 100px;                /* Large font size for desktops */
+    color: white;
+    margin: 0;                       /* Remove default margin */
+    line-height: 1.1;                /* Adjust line height for better spacing */
+    max-width: 90%;                  /* Limit width to prevent overflow */
+    overflow-wrap: break-word;       /* Ensure long words wrap within the container */
+  }
+  
+  .banner p {
+    font-size: 20px;                 /* Default paragraph font size */
+    padding: 0 20px;                 /* Padding for better text readability */
+    margin: 20px 0;                  /* Add margin for spacing */
+    max-width: 90%;                  /* Limit width to prevent overflow */
+  }
+  
+  /* Dot navigation styles */
+  .dots {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dot:hover,
+  .dot.active {
+    background-color: #717171;
+  }
+  
+  .banner button {
+    padding: 15px 30px; /* Increase button padding */
+    background-color: rgb(245, 178, 84); /* Button background color */
+    color: black; /* Button text color */
+    font-weight: bold;
+    font-size: x-large ;
+    border: none; /* Remove all borders */
+    border-bottom: 4px solid red; /* Only bottom border in red */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .banner {
+      height: 80vh;                  /* Adjust height for smaller screens */
+    }
+  
+    .banner h1 {
+      font-size: 50px;               /* Smaller font size for mobile */
+      max-width: 90%;                /* Ensure it does not overflow */
+    }
+  
+    .banner p {
+      font-size: 16px;               /* Adjust paragraph size for readability */
+      padding: 0 10px;               /* Less padding for mobile */
+      margin: 10px 0;                /* Adjust margin */
+      max-width: 90%; 
+      text-align: justify;               /* Limit width to prevent overflow */
+    }
+  
+    .banner button {
+      padding: 10px 15px;            /* Maintain reasonable button padding */
+      margin-bottom: 20px;           /* Add margin to the bottom to keep it inside the banner */
+    }
+  
+    .dots {
+      bottom: 10px;                  /* Adjust dots position */
+    }
+  
+    .dot {
+      height: 10px;                  /* Smaller dot size */
+      width: 10px;                   /* Smaller dot size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner {
+      height: 80vh;                  /* Further adjust height for very small screens */
+    }
+  
+    .banner h1 {
+      font-size: 40px;               /* Even smaller font size for very small screens */
+      max-width: 90%;                /* Ensure it does not overflow */
+    }
+  
+    .banner p {
+      font-size: 14px;               /* Adjust paragraph size for very small screens */
+      max-width: 90%;
+      text-align: justify;                /* Limit width to prevent overflow */
+    }
+  
+    .read-more {
+      padding: 8px 10px;             /* Further reduce button padding */
+      max-width: 80%;                /* Limit button width */
+      width: 100%;                   /* Allow button to fill the container */
+      margin-bottom: 20px;           /* Add margin to the bottom */
+    }
+  }
+  
+  
+  
+  /* OUR ADVANTAGES */
+  
+  
+  .advantages, .about-us, .services, .portfolio, .process, .people-about-us, .skills, .contact-us, .our-contacts {
+    padding: 40px;
+  }
+  
+  .advantages, .about-us {
+    background-color: #f4f4f4;
+  }
+  
+  .advantage-items {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure all items stay in one row */
+    justify-content: space-between; /* Add space between items to evenly distribute them */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Ensure the container takes the full width */
+    gap: 10px; /* Optional: Add spacing between items */
+  }
+  
+  .advantage-item {
+    text-align: center;
+    flex: 1; /* Allows the item to grow and shrink, filling available space */
+    min-width: 150px; /* Prevent the item from shrinking too small */
+    max-width: 200px; /* Adjust based on the design to prevent the items from growing too large */
+    box-sizing: border-box; /* Ensure padding and borders are included in the width */
+    margin: 10px;
+  }
+  
+  
+  .advantage-item img {
+    width: 100px; /* Ensure images fill the item container */
+    height: auto; /* Maintain aspect ratio */
+    
+  }
+  
+  /* Responsive Styles for Mobile */
+  @media (max-width: 768px) {
+    .advantages, .about-us {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+  
+    .advantage-items {
+        flex-wrap: wrap; /* Allow items to wrap onto the next line on mobile */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+  
+    .advantage-item {
+        width: 80%; /* Make items take up more width on mobile */
+        margin: 10px 0; /* Add vertical spacing between items */
+    }
+  
+    .portfolio-heading h2 {
+        font-size: 24px; /* Adjust heading size for mobile */
+    }
+  
+    .portfolio-heading p {
+        font-size: 16px; /* Adjust paragraph size for mobile */
+    }
+  }
+  
+  
+  
+  /* ABOUT US */
+  .Art-board {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    width: 100%; /* Full width of the container */
+    margin: 0;   /* No margin */
+  }
+  
+  /* Left section (text) */
+  .Art-board1 {
+    flex: 1; /* Default take 50% of the space */
+    margin: 10px; /* Space between items */
+    padding: 20px; /* Padding for text */
+    background-color: #f2efef;
+    text-align: left;
+  }
+  
+  .Art-board1 p {
+    text-align: left;
+  }
+  
+  .black-text1 {
+    text-align: center; /* Center text for mobile */
+    font-size: 2rem; /* Adjust font size */
+  }
+  
+  .green-text {
+    text-align: center; /* Center text for mobile */
+    color: #68b045;
+    font-size: 2rem; /* Adjust font size */
+  }
+  
+  /* Right section (image) */
+  .Art-board2 {
+    flex: 1; /* Default take 50% of the space */
+    margin: 10px; /* Space between items */
+  }
+  
+  .Art-board2 img {
+    width: 100%; /* Ensure the image fills its container */
+    height: auto;
+  }
+  
+  .about-us button {
+    padding: 15px 30px; /* Increase button padding */
+    background-color: rgb(245, 178, 84); /* Button background color */
+    color: black; /* Button text color */
+    font-weight: bold;
+    font-size: x-large ;
+    border: none; /* Remove all borders */
+    border-bottom: 4px solid red; /* Only bottom border in red */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    
+  }
+  
+  /* Responsive Styles for Mobile */
+  @media (max-width: 768px) {
+    .about-us button {
+      padding: 10px 20px; /* Reduce padding for mobile */
+      font-size: medium;  /* Adjust font size for smaller screens */
+      border-bottom: 3px solid red; /* Slightly smaller bottom border */
+    }
+    .Art-board1 p {
+      text-align: left;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-us button {
+      padding: 8px 15px; /* Further reduce padding for very small screens */
+      font-size: small;  /* Smaller font size for extra small screens */
+      border-bottom: 2px solid red; /* Make the bottom border thinner */
+    }
+    .Art-board1 p {
+      text-align: left;
+    }
+  }
+  
+  /* Advantage items */
+  .advantage-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Space between items */
+    margin-top: 20px; /* Space above items */
+  }
+  
+  .advantage-item {
+    flex: 1 1 30%; /* Default 3 items per row */
+    margin: 10px; /* Space between items */
+    text-align: center; /* Center text */
+  }
+  
+  .advantage-item img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .Art-board {
+        flex-direction: column; /* Stack vertically */
+    }
+  
+    .Art-board1, .Art-board2 {
+        flex: none; /* Reset flex */
+        margin: 10px 0; /* Vertical margin */
+        padding: 20px; /* Padding for mobile */
+    }
+  
+    .advantage-item {
+        flex: 1 1 100%; /* Full width on mobile */
+    }
+  
+    .advantages, .about-us {
+        padding: 10px; /* Reduced padding for mobile */
+    }
+  }
+  
+  
+  /* OUR SERVICES */
+  
+  .services-heading {
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+    
+  }
+  .services-heading p{
+    color: #c5c4c4;
+    font-size: .7rem;
+    margin-bottom: 100px;
+  }
+  
+  .circle-image {
+    position: absolute;
+    top: -25px; /* Adjust this value to move half of the image outside */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px; /* Set the width of the image container */
+    height: 70px; /* Set the height of the image container */
+  }
+  
+  .circle-image img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%;
+  }
+  .service-item {
+    position: relative;
+    padding-top: 40px; /* Adjust padding to make space for the image */
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin: 10px;
+  }
+  
+  .service-item h3 {
+    margin-top: 40px;
+  }
+  
+  .service-item p {
+    font-size: .1rem;
+    color: #a19f9f;
+    font-weight: bold;
+  }
+  
+  .read {
+    text-align: center;
+  }
+  
+  /* Green color for the 'read more' link */
+  .read a {
+    color: #68b045 !important; /* Keep !important only for color */
+    text-decoration: underline !important; /* No underline by default */
+    font-size: 0.7rem;
+  }
+  
+  
+  .service-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Adds a gap between the columns and rows */
+  }
+  
+  /* OUR PORTFOLIO */
+  .portfolio {
+    background-color: black;
+  }
+  
+  .portfolio-heading {
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+  }
+  
+  .black-text-p-folio {
+    color: white; /* Keep "Our" in white */
+    font-weight: bold;
+  }
+  
+  .green-text-p-folio {
+    color: rgb(3, 172, 3); /* Make "Portfolio" green */
+    font-weight: bold;
+  }
+  
+  .portfolio-heading p, .advantage-items p {
+    color: #c5c4c4;
+    font-size: .7rem;
+  }
+  
+  .text-container {
+    display: flex; /* Arrange the items in a row */
+    gap: 10px; /* Add a small gap between the items */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow wrapping if container width is too small */
+  }
+  
+  .text-container p {
+    margin: 0; /* Remove default margins */
+    padding: 20px;
+    font-size: large;
+    color: white;
+  }
+  
+  .logo1 {
+    color: rgb(247, 155, 28);
+    font-weight: bold;
+  }
+  
+  .portfolio-items {
+    display: flex;
+    justify-content: center;
+    gap: 0; /* No horizontal gap between columns */
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+  }
+  
+  .portfolio-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0; /* No vertical gap between images */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .portfolio-item {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .portfolio-item img {
+    display: block; /* Ensures no extra space below the image */
+    width: 250px; /* Set the desired width of the images */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0;
+    padding: 0;
+    border: none; /* Ensure no borders causing extra space */
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .text-container {
+      flex-direction: column; /* Stack the items vertically on mobile */
+      gap: 5px; /* Adjust gap size for mobile */
+    }
+  
+    .text-container p {
+      padding: 10px; /* Reduce padding for better fit */
+      font-size: medium; /* Adjust font size */
+    }
+  
+    .portfolio-items {
+      flex-direction: column; /* Stack all portfolio columns on mobile */
+      align-items: center; /* Center them */
+    }
+  
+    .portfolio-item img {
+      width: 100%; /* Make images take up full width on mobile */
+      max-width: 100%; /* Ensure they do not exceed the container width */
+      margin-bottom: 5px;
+    }
+    .portfolio-heading h2 {
+      font-size: 2rem;
+      margin-right: 10px;
+    }
+  }
+  
+  /* PROCESS */
+  .process-heading h2 {
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+  }
+  
+  .process-black-text {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .process-green-text {
+    color: rgb(3, 172, 3);
+    font-weight: bold;
+  }
+  
+  .process-steps {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-basis: 100px;
+  }
+  
+  .step img {
+    width: 200px; /* Set a uniform width for all images */
+    height: 200px; /* Set a uniform height for all images */
+    object-fit: cover; /* Ensures the image is resized while keeping aspect ratio */
+    margin-bottom: 10px; /* Add space below the image */
+  }
+  
+  .step p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .process-steps {
+      flex-direction: column; /* Stack the steps vertically on mobile */
+      justify-content: center; /* Center the steps */
+    }
+  
+    .step {
+      margin-bottom: 20px; /* Add space between steps on mobile */
+    }
+  
+    .step img {
+      width: 150px; /* Reduce image size for smaller screens */
+      height: 150px; /* Maintain aspect ratio but smaller size */
+    }
+  
+    .step p {
+      font-size: 14px; /* Adjust text size for smaller screens */
+    }
+  
+    .step h6 {
+      font-size: 12px; /* Adjust the heading size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .step img {
+      width: 120px; /* Further reduce image size for very small screens */
+      height: 120px;
+    }
+  
+    .step p {
+      font-size: 12px; /* Reduce text size even further for smaller devices */
+    }
+  
+    .step h6 {
+      font-size: 10px; /* Smaller heading for very small screens */
+    }
+  }
+  
+  /* PEOPLE ABOUT US */
+  
+  .portfolio-heading h2 {
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+  }
+  
+  .person {
+    border-radius: 0px;
+  }
+  
+  .people-about-us {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .portfolio-heading {
+    margin-bottom: 20px;
+  }
+  
+  .people {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .person {
+    display: flex;
+    align-items: center;
+    width: 50%; /* Two items per row for larger screens */
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  /* Borders */
+  .people .person:first-child {
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+  }
+  
+  .people .person:nth-child(2) {
+    border-bottom: 2px solid gray;
+  }
+  
+  .people .person:nth-child(3) {
+    border-right: 2px solid gray;
+  }
+  
+  .people .person:nth-child(4) {
+    border-left: 0px solid gray;
+    
+  }
+  
+  .person img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    padding: 20px;
+  }
+  
+  .person p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .people {
+      flex-direction: column; /* Stack people vertically */
+      align-items: center;
+    }
+  
+    .person {
+      width: 100%; /* Make each person take full width on mobile */
+      justify-content: center;
+      text-align: center;
+      border: none; /* Remove borders on mobile */
+      margin-bottom: 20px; /* Add space between each person */
+    }
+  
+    .person img {
+      width: 80px; /* Reduce image size for mobile */
+      margin: 0 auto; /* Center the image */
+      padding: 10px 0;
+    }
+  
+    .person p {
+      font-size: 14px; /* Adjust text size for mobile */
+      text-align: center; /* Center-align text on mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .person img {
+      width: 60px; /* Further reduce image size on very small screens */
+    }
+  
+    .person p {
+      font-size: 12px; /* Reduce text size even further for small devices */
+    }
+  }
+  
+  /* OUR SKILLS */
+  
+  .skill-heading h2 {
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+  }
+  
+  .skill-black-text {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .skill-green-text {
+    color: rgb(3, 172, 3);
+    font-weight: bold;
+  }
+  
+  /* New styles for skills section */
+  .skill-circles {
+    display: flex; /* Use flexbox to arrange items in a row */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line if necessary */
+    margin-top: 20px; /* Add some space above the skill circles */
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column; /* Align image and text vertically */
+    align-items: center; /* Center the content */
+    margin: 0 15px; /* Add some horizontal spacing between items */
+  }
+  
+  .step img {
+    width: 250px; /* Set a uniform size for all images */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between image and text */
+  }
+  
+  .step p {
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center-align text */
+    font-size: 16px; /* Font size for the skill labels */
+  }
+  
+  /* START NEW PROJECT, CONTACT US */
+  
+  .new-project {
+    background-color: #68b045;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    
+  }
+  .new-project h2 {
+    font-size: 4rem;
+    margin-bottom: 50px;
+    margin-top: 0px;
+    color: white;
+  }
+  
+  /* Increase input height */
+  input[type="text"], input[type="email"] {
+    width: 100%; /* Set to full width for mobile devices */
+    max-width: 300px; /* Optional: limit the max width for larger screens */
+    padding: 15px; /* Increase the padding to make the fields taller */
+    font-size: 16px; /* Adjust font size as needed */
+    border: 1px solid #a19f9f; /* Optional: border style */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 10px; /* Spacing between inputs */
+  }
+  
+  /* Placeholder text style */
+  input::placeholder {
+    color: rgb(172, 170, 170); /* Make placeholder text light gray */
+    font-weight: normal; /* Optional: adjust font weight */
+    font-size: 14px; /* Optional: adjust placeholder font size */
+  }
+  
+  /* Button styling */
+  button {
+    padding: 15px 30px; /* Increase button padding */
+    background-color: rgb(245, 178, 84); /* Button background color */
+    color: black; /* Button text color */
+    font-weight: bold;
+    border: none; /* Remove all borders */
+    border-bottom: 4px solid red; /* Only bottom border in red */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 10px; /* Spacing above the button */
+  }
+  
+  /* Responsive adjustments for mobile */
+  @media (max-width: 600px) {
+    .new-project h2 {
+      color: white; /* Set text color to white */
+      font-size: 3rem; /* Set font size to extra large */
+      font-weight: bold; /* Make the font bold */
+      margin-top: 0px;
+    }
+    .new-project {
+      padding: 30px; /* Reduce padding for smaller screens */
+    }
+  
+    input[type="text"], input[type="email"] {
+      width: 90%; /* Set inputs to 90% width for smaller screens */
+      font-size: 14px; /* Slightly smaller font size for better fit */
+    }
+  
+    button {
+      width: 90%; /* Button takes up 90% width for smaller screens */
+    }
+  }
+  
+  
+  /*CONTEECT US SECTION */
+  
+  .our-contacts h2 {
+    
+    font-size: 3rem; /* Set font size to extra large */
+    font-weight: bold; /* Make the font bold */
+    margin-top: 0px;
+  }
+  
+  .black-text4 {
+    color: black;
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+  
+  .green-text5 {
+    color: rgb(3, 172, 3);
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  
+  .our-contacts p {
+    margin-top: 50px;
+    line-height: 1.5; /* Improve readability */
+  }
+  
+  /* Responsive adjustments for mobile */
+  @media (max-width: 600px) {
+    .our-contacts h2 {
+        font-size: 2rem; /* Reduce font size for smaller screens */
+        margin-top: 20px; /* Adjust margin */
+        text-align: center; /* Center align heading on mobile */
+    }
+  
+    .our-contacts p {
+      display: flex; /* Use flexbox for layout */
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center align items */
+      margin-top: 20px; /* Adjust margin for spacing */
+  }
+  
+  .our-contacts p img {
+      margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .our-contacts p span {
+      display: block; /* Each contact info item in its own line */
+      margin: 5px 0; /* Spacing between lines */
+  }
+  
+    .map {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align for mobile */
+    }
+  
+    .google-map-embed {
+        width: 100%; /* Full width for mobile */
+        height: 200px; /* Reduced height for mobile */
+    }
+  }
+  
+  /* General styles for icons */
+  .our-contacts img {
+    width: 25px; /* Default icon size */
+    height: auto;
+    border-radius: 0px;
+  }
+  
+  .our-contactsp, .skillp, .people-about-usp, .processp, .portfolio-headingp {
+    color: rgb(185, 183, 183);
+    text-align: center;
+  }
+  
+  .process h6 {
+    font-size: 0.1rem;
+    color: rgb(185, 183, 183);
+  }
+  
+  .map {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .google-map-embed {
+    width: 1500px; /* Original width for larger screens */
+    height: 450px; /* Original height for larger screens */
+    border: 0;
+  }
+  
+  
+  /* FOOTER */
+  footer {
+    background-color: #538935;
+    color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns all sections at the top */
+    flex-wrap: wrap; /* Allows wrapping of content on smaller screens */
+  }
+  
+  .footer-logo {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .footer-logo p {
+    width: 250px;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+  
+  .footer-logo img {
+    width: 100px;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex: 3;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .services, .useful-links, .contacts-footer {
+    flex: 1;
+    padding-top: 0;
+  }
+  
+  .services {
+    padding-right: 20px;
+  }
+  
+  .useful-links {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .contacts-footer {
+    padding-left: 20px;
+  }
+  
+  h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+  
+  .services a, .useful-links a {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  .services a:hover, .useful-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .contacts-footer img {
+    width: 25px;
+    height: auto;
+    border-radius: 0;
+  }
+  
+  .contacts-footer p {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .contacts-footer img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .followus-footer img {
+    width: 45px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .footer-links:before, .footer-links:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: lightgreen;
+  }
+  
+  .footer-links:before {
+    left: 33%;
+  }
+  
+  .footer-links:after {
+    left: 66%;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column; /* Stack footer sections vertically */
+      padding: 20px; /* Reduce padding on mobile */
+    }
+  
+    .footer-logo, .footer-links {
+      flex: 1;
+      margin: 0;
+      width: 100%; /* Make each section full width */
+    }
+  
+    .footer-links {
+      display: block; /* Stack the sections on top of each other */
+      margin-top: 20px; /* Add space between sections */
+    }
+  
+    .services, .useful-links, .contacts-footer {
+      padding: 0;
+      margin-bottom: 20px; /* Space out the links on mobile */
+    }
+  
+    .footer-logo img {
+      width: 80px; /* Reduce logo size for mobile */
+    }
+  
+    .services a, .useful-links a {
+      font-size: 14px; /* Reduce link size for mobile */
+    }
+  
+    .contacts-footer p {
+      font-size: 14px;
+    }
+  
+    .followus-footer img {
+      width: 35px; /* Reduce icon size for mobile */
+    }
+  
+    .footer-links:before, .footer-links:after {
+      display: none; /* Hide the dividing lines on mobile */
+    }
+  }
+  
+  .author h4 {
+    text-align: center;
+    color: #bbb;
+  }
+  
+  .read-more {
+    margin-top: 20px;
+    padding: 15px 50px; /* Increase button padding */
+    background-color: rgb(245, 178, 84); /* Button background color */
+    color: black; /* Button text color */
+    font-weight: bold;
+    font-size: x-large;
+    border: none; /* Remove all borders */
+    border-bottom: 4px solid red; /* Only bottom border in red */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  
+  
+  
+  
+  
+  
